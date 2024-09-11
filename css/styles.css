@@ -1,0 +1,163 @@
+header{
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/fondoTortas.webp);
+}
+body{
+    background-image: url(../images/wp4720671-color-pastel-wallpapers.jpg);
+}
+.cabecera{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color: rgba(226, 43, 150, 0.105);
+    height: 130px;
+    
+}
+
+h1{
+    margin-left: 1rem;
+}
+h2{
+    text-align: center;;
+}
+
+h3{
+    text-align: center;
+}
+
+.fotoHeader{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 0.5rem;
+
+}
+.fotoHeader1{
+    width: 60%;
+    height: 60%;
+    margin: 0 auto;
+}
+p{
+    text-align: center;
+   }
+   
+.seleccion{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+label{
+    margin-bottom:0.5rem;
+    margin-top: 0.5rem;
+    background-color: transparent;
+    }
+
+
+.card{
+    list-style: none;
+    border: none;
+    color: rgba(48, 25, 50, 0.579);
+ }
+
+li{
+    margin-bottom: 0.2rem;
+
+}
+
+input{
+    margin-bottom: 0.5rem;
+}
+h5{
+    margin-left: 1rem;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 0.5rem;
+    background-color: aliceblue;
+    border:outset;
+    border-color: rgba(25, 15, 34, 0.164);
+ }
+ select{
+
+    width: 80%;
+ }
+
+footer{
+    background-color: rgba(227, 122, 227, 0.471);
+    margin:0 auto;
+
+}
+
+
+
+@media screen and (min-width:320px) and (max-width:500px){
+    .fotoChavo{
+        display: none;
+    }
+    li{
+        justify-content: center;
+        align-items: center;
+    }
+      }
+
+@media screen and (min-width:501px) and (max-width:960px){
+    .fotoHeader{display:flex;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+        width: 70%;
+        row-gap: 2rem;}
+  
+    }
+    .seleccion{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0.5rem;
+      
+    }
+    .formulario{
+        width: 70%;
+    }
+    
+    
+
+    @media screen and (min-width:961px){
+        .fotoHeader{
+        display: flex;
+        flex-direction: row;
+        }
+        .fotoHeader1{
+            width: 20%;
+        }
+        .seleccion{
+            display: flex;
+            flex-direction: row;
+            column-gap: 0.5rem;
+    }
+    .formulario{
+        width: 40%;
+    }
+}
+
+
+
+
+
+
+
+
+
+

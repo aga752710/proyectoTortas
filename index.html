@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/main.js"></script>
+    <title>Tortas personalizadas</title>
+</head>
+<header>
+  <div class="cabecera">
+    <img src="./images/logoMinamabe.jpg" alt="logo" width="80" height="90">
+    <h1>Minamabe Repo</h1>
+  </div>
+  
+
+<section>
+    <p class="fs-2">Las mejores tortas personalizadas de Tucumán</p>
+</section>
+    <div class="fotoHeader">
+        <img class="fotoHeader1" src="./images/descendientes.jpg" alt="fotoHeader" width="100" height="150">
+        <img class="fotoHeader1" class="fotoChavo" src="./images/chavo.jpg" alt="fotoHeader" width="100" height="150">
+        <img class="fotoHeader1"  class="fotoYoda" src="./images/yoda.jpg" alt="fotoHeader" width="100" height="150">
+    </div>
+
+</header>
+<body>
+    <h3>Estas son nuestras opciones</h3>
+
+   <section class="seleccion">
+       
+       <h3>Rellenos</h3>
+       <div id="rellenos">
+        </div>
+        
+        
+        <h3>Bizcochuelos</h3>
+        <div id="bizcochuelos">
+        </div>
+        
+        <h3>Personalizaciones</h3>
+        
+        <div id="personalizaciones">
+        </div>
+        
+    </section>
+    
+    <form id="formulario" class="formulario">
+        <h2>Selecciona tus opciones</h2>
+
+        
+        <label for="ingresarRelleno">Relleno:</label>
+        <select id="ingresarRelleno">
+            <option value="">Selecciona un relleno</option>
+            
+        </select>
+
+       
+        <label for="ingresarsgdoRelleno">Segundo Relleno:</label>
+        <select id="ingresarsgdoRelleno">
+            <option value="">Selecciona un segundo relleno</option>
+           
+        </select>
+
+        
+        <label for="ingresarBizcochuelo">Bizcochuelo:</label>
+        <select id="ingresarBizcochuelo">
+            <option value="">Selecciona un bizcochuelo</option>
+            
+        </select>
+
+        
+        <label for="ingresarPersonalizacion">Personalización:</label>
+        <select id="ingresarPersonalizacion">
+            <option value="">Selecciona una personalización</option>
+            
+        </select>
+
+        <button id="botonObtener" type="submit">Presupuesto</button>
+    </form>
+
+    <h3 class="text-align center">Esta es su elección</h3>
+    <div id="selecciones" class="formulario" class="fs-6">
+        
+        <div id="total">
+    </div>
+
+
+    </div>
+      
+        
+    </body>
+<footer>
+
+    <p class="fs-5">Minamabe Repo</p>
+    <p class="fs-6">Todos los derechos reservados</p>
+
+    
+</footer>
+ 
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
