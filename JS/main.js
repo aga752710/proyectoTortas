@@ -85,6 +85,33 @@ personalizaciones.forEach((personalizacion) => {
 
 personal.appendChild(ulPersonal)
 
+const porciones = [
+    {
+        id: 1,nombre: "15 porciones",precio: 5000
+    },
+    {
+        id: 2,nombre: "30 porciones",precio: 7000
+    },
+    {
+        id: 3,nombre: "35 porciones",precio: 9000
+    },
+    {
+        id: 4,nombre: "45 porciones",precio: 12000
+    }
+]
+
+const eleccionPorcion = document.getElementById("porciones")
+
+const ulPorcion = document.createElement("ul")
+
+porciones.forEach((porcion) => {
+    const porcionElegida = document.createElement("li")
+    porcionElegida.className = "card"
+    porcionElegida.textContent = `${porcion.nombre}`
+    ulPorcion.appendChild(porcionElegida)
+})
+
+eleccionPorcion.appendChild(ulPorcion)
 
 
 
@@ -122,6 +149,15 @@ personalizaciones.forEach((personalizacion) => {
     selectPersonalizacion.appendChild(opcion)
 })
 
+const selectPorcion = document.getElementById("ingresarPorciones")
+
+porciones.forEach((porcion) => {
+    const opcion = document.createElement("option")
+    opcion.value = porcion.id
+    opcion.textContent = `${porcion.nombre}`
+    selectPorcion.appendChild(opcion)
+})
+
 
 
 function obtenerSeleccionados(event) {
@@ -132,12 +168,15 @@ function obtenerSeleccionados(event) {
     const idSgdoRelleno = document.getElementById("ingresarsgdoRelleno").value
     const idBizcochuelo = document.getElementById("ingresarBizcochuelo").value
     const idPersonalizacion = document.getElementById("ingresarPersonalizacion").value
+    const idPorcion = document.getElementById("ingresarPorciones").value
+
 
     const elementos = [
         { id: idRelleno, lista: rellenos },
         { id: idSgdoRelleno, lista: rellenos },
         { id: idBizcochuelo, lista: bizcochuelos },
-        { id: idPersonalizacion, lista: personalizaciones }
+        { id: idPersonalizacion, lista: personalizaciones },
+        { id: idPorcion, lista: porciones}
     ]
 
     elementos.forEach(({ id, lista }) => {
@@ -145,24 +184,70 @@ function obtenerSeleccionados(event) {
             const seleccion = lista.find(item => item.id == id)
             if (seleccion) selecciones.push(seleccion)
         }
+
+})
+const total = selecciones.reduce((presupuesto, item) => presupuesto + item.precio, 0)
+
+mostrarSelecciones(selecciones)
+mostrarTotal(total)
+
+setTimeout(() => {
+    swal({
+        title: "Confirmación",
+        text: "¿Desea realizar el pedido?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
     })
+    .then((willOrder) => {
+        if (willOrder) {
+            swal("Pedido realizado.")
+        } else {
+            swal("Pedido cancelado.")
+        }
+    })
+}, 5000)
 
-    mostrarSelecciones(selecciones)
 }
+  
+ 
+ 
+     function mostrarSelecciones(selecciones) {
+         const seleccionado = document.getElementById("selecciones")
+         seleccionado.innerHTML = ''
 
-
-function calcularTotal(selecciones) {
-    return selecciones.reduce((total, seleccion) => total + seleccion.precio, 0)}
-    
-    function mostrarTotal(selecciones) {
-        const total = calcularTotal(selecciones)
-        const elementoTotal = document.getElementById('total')
-        elementoTotal.textContent = `El total es: $${total}`}
+         
+         const ulSeleccion = document.createElement("ul")
+         
+         selecciones.forEach((seleccion) => {
+             const elegido = document.createElement("li")
+             elegido.className = "card"
+             elegido.textContent = `${seleccion.nombre} - Precio: $${seleccion.precio}`
+            
+                     ulSeleccion.appendChild(elegido)
+                     
+                    })
+                     
+                
+                 seleccionado.appendChild(ulSeleccion)
+                 
+     } 
+     
+     function mostrarTotal(total) {
+        const mostrarSel = document.getElementById("total")
+        mostrarSel.innerHTML = ''
+          
+        const totalSel = document.createElement("p")
         
-        function mostrarSelecciones(selecciones) {
-            mostrarTotal(selecciones)}
-            
-            
+        totalSel.className = "card"
+        totalSel.textContent = `Costo total: $${total}`
+    
+        mostrarSel.appendChild(totalSel)
+       
+     }
+
+
+
 const formulario = document.getElementById("formulario")
       formulario.addEventListener("submit", obtenerSeleccionados)
 

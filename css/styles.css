@@ -24,14 +24,19 @@ h2{
 }
 
 h3{
+text-align: center;
+}
+
+.h3Seleccion{
     text-align: center;
 }
 
 .fotoHeader{
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     row-gap: 0.5rem;
-    padding: 0.5rem;
+
 
 }
 .fotoHeader1{
@@ -45,19 +50,21 @@ p{
    
 .seleccion{
     display: flex;
-    margin: 0 auto;
-    flex-direction: row;
-    margin-top: 1rem;
+    width: 90%;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    
-    
+   
+}
+.seleccion li{
+    margin: 1rem auto;
 }
 
 label{
+    justify-content: center;
+    align-items: center;
     margin-bottom:0.5rem;
     margin-top: 0.5rem;
-    background-color: transparent;
+    
     }
 
 
@@ -66,11 +73,6 @@ label{
     border: none;
     color: rgba(48, 25, 50, 0.579);
  }
-
-li{
-    margin-bottom: 0.2rem;
-
-}
 
 input{
     margin-bottom: 0.5rem;
@@ -83,9 +85,8 @@ h5{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 4rem auto;
     width: 100%;
-    padding-left: 0.5rem;
     background-color: aliceblue;
     border:outset;
     border-color: rgba(25, 15, 34, 0.164);
@@ -98,20 +99,9 @@ h5{
 footer{
     background-color: rgba(227, 122, 227, 0.471);
     margin:0 auto;
+    margin-top: 5rem;
 
 }
-
-
-
-@media screen and (min-width:320px) and (max-width:500px){
-    .fotoChavo{
-        display: none;
-    }
-    li{
-        justify-content: center;
-        align-items: center;
-    }
-      }
 
 @media screen and (min-width:501px) and (max-width:960px){
     .fotoHeader{display:flex;
@@ -124,12 +114,15 @@ footer{
     .seleccion{
         display: flex;
         flex-direction: column;
-        margin: 0;
-        padding: 0.5rem;
-      
+        justify-content: center;
+       
     }
+     .seleccion li{
+        margin: 1rem auto;
+     }
+
     .formulario{
-        width: 70%;
+        width: 100%;
     }
     
     
@@ -143,12 +136,14 @@ footer{
             width: 20%;
         }
         .seleccion{
-            display: flex;
-            flex-direction: row;
-            column-gap: 0.5rem;
+        display: flex;
+        margin: 0 auto;
+        width: 70%;
+       
+        
     }
     .formulario{
-        width: 40%;
+        width: 60%;
     }
 }
 
