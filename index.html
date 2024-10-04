@@ -8,9 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <script defer src="./JS/main.js"></script>
+    <script defer src="./JS/usuario.js"></script>
     <title>Tortas personalizadas</title>
 </head>
 <header>
@@ -19,6 +20,7 @@
     <h1>Minamabe Repo</h1>
   </div>
   
+ 
 
 <section>
     <p class="fs-2">Las mejores tortas personalizadas de Tucumán</p>
@@ -33,77 +35,88 @@
 <body>
     <h3>Estas son nuestras opciones</h3>
 
-   <section>
+   <section class="opciones">
        
-       <h3 class="h3Seleccion">Rellenos</h3>
-       <div class="seleccion" id="rellenos">
-        </div>
+       <h3>Rellenos</h3>
+       <div  id="rellenos"></div>
         
         
-        <h3 class="h3Seleccion">Bizcochuelos</h3>
-        <div class="seleccion" id="bizcochuelos">
-        </div>
+        <h3>Bizcochuelos</h3>
+        <div  id="bizcochuelos"></div>
         
-        <h3 class="h3Seleccion">Personalizaciones</h3>
-        <div class="seleccion" id="personalizaciones">
-        </div>
+        <h3>Personalizaciones</h3>
+        <div  id="personalizaciones"></div>
 
-        <h3 class="h3Seleccion">Porciones</h3>
-        <div class="seleccion" id="porciones">
-        </div>
+        <h3>Porciones</h3>
+        <div  id="porciones"></div>
         
     </section>
     
+        
     <form id="formulario" class="formulario">
         <h2>Selecciona tus opciones</h2>
 
         
-        <label for="ingresarRelleno">Relleno:</label>
-        <select id="ingresarRelleno">
+        
+        <select id="ingresarRelleno" required>
             <option value="">Selecciona un relleno</option>
-            
-        </select>
-
+        </select><br>
        
-        <label for="ingresarsgdoRelleno">Segundo Relleno:</label>
         <select id="ingresarsgdoRelleno">
             <option value="">Selecciona un segundo relleno</option>
-           
-        </select>
-
+         </select><br>
         
-        <label for="ingresarBizcochuelo">Bizcochuelo:</label>
         <select id="ingresarBizcochuelo">
             <option value="">Selecciona un bizcochuelo</option>
-            
-        </select>
-
-        
-        <label for="ingresarPersonalizacion">Personalización:</label>
+        </select><br>
+       
         <select id="ingresarPersonalizacion">
             <option value="">Selecciona una personalización</option>
-            
-        </select>
-
-        <label for="ingresarPorciones">Porciones:</label>
+        </select><br>
+        
         <select id="ingresarPorciones">
             <option value="">Selecciona la cantidad de porciones</option>
-            
-        </select>
+         
+        </select><br>
 
-        <button id="botonObtener" type="submit">Presupuesto</button>
+        <button type="submit">Guardar</button>
+
+        <div id="selecciones" style="font-size: small;"></div>
+
+        <div id="total"></div>
     </form>
 
-    <h3>Esta es su elección</h3>
+    <h3>Ingresa tus datos de contacto</h3>
+    <form id="miFormulario" class="formulario">
+        
+        <input placeholder="Inresa tu nombre completo" type="text" id="nombre" name="nombre" required>
+
+        
+        <input placeholder="Ingresa tu correo electrónico" type="email" id="email" name="email" required>
+
+        
+        <input placeholder="Ingresa tu teléfono de contacto" type="tel" id="telefono" name="telefono" required>
+
+        
+        <input placeholder="Ingresa la dirección de entrega" type="dir" id="direccion" name="direccion" required>
+
+        <textarea id="textUsuario"></textarea>
+
+
+        <input type="submit" value="Guardar">
+
+    </form>
+    
+    <ul class="formulario" class="ulUsuario" id="resultado" style="list-style: none;align-items: center;"></ul>
     
     
     
     
-    <div id="selecciones"  class="formulario" class="fs-6"></div>
     
-      <div class="formulario" id="total"></div>
+     
+    <div class="formulario" id="mensaje"></div>
     
-    
+
     </body>
 <footer>
 

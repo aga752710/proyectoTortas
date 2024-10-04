@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,"nombre": "Dulce de leche","precio": 1000
+    },
+    {
+        "id": 2,"nombre": "Crema chantilly","precio": 1500
+    },
+    {
+        "id": 3,"nombre": "Crema pastelera","precio": 900
+    },
+    {
+        "id": 4,"nombre": "Crema de chocolate","precio": 1600
+    }
+]

@@ -1,11 +1,19 @@
-// -DOM y Eventos
-// -arrays de objetos
-// -funciones de orden superior (minimo 2 diferentes)
-// -storage (guardar, recuperar, borrar, vaciar)
-// -estilos básicos
-// -NADA de console, alert ni prompt
+// -Se entrega si o si con GitHub 
+// -Tiene que estar todo estilado
+// -Minimo 2 archivos JS
+// -Si o si fetch (a json y/o api)
+// -Ordenar archivos en carpetas
+// -TODO con dom, nada de prompt, console ni alert de js
+// -Circuito completo de la info
+// -Librerias JS (sweetalert/toasify, etc)
+// -try-catch-finally
 
 
+Swal.fire({
+  title: "Página de pedidos",
+  text: "Gracias por elegirnos. Llene los campos para proceder con su pedido",
+  icon: "info"
+})
 
 const rellenos = [
     {
@@ -22,11 +30,17 @@ const rellenos = [
     }
 ]
 
-const sabores = document.getElementById("rellenos")
+// Uso de fetch
+
+let sabores = document.getElementById("rellenos")
+
+fetch("./DB/data.json")
+.then(response => response.json())
+.then(data => {
 
 const ulSabores = document.createElement("ul")
 
-rellenos.forEach((relleno) => {
+data.forEach((relleno) => {
     const capa = document.createElement("li")
     capa.className = "card"
     capa.textContent = `${relleno.nombre}`
@@ -34,6 +48,10 @@ rellenos.forEach((relleno) => {
 })
 
 sabores.appendChild(ulSabores)
+}
+
+)
+
 
 const bizcochuelos = [
     {
@@ -183,52 +201,46 @@ function obtenerSeleccionados(event) {
         if (id) {
             const seleccion = lista.find(item => item.id == id)
             if (seleccion) selecciones.push(seleccion)
+
+    
         }
 
 })
 const total = selecciones.reduce((presupuesto, item) => presupuesto + item.precio, 0)
 
-mostrarSelecciones(selecciones)
-mostrarTotal(total)
 
-setTimeout(() => {
-    swal({
-        title: "Confirmación",
-        text: "¿Desea realizar el pedido?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-    })
-    .then((willOrder) => {
-        if (willOrder) {
-            swal("Pedido realizado.")
-        } else {
-            swal("Pedido cancelado.")
-        }
-    })
-}, 5000)
+mostrarTotal(total)
+mostrarSelecciones(selecciones)
+
+localStorage.setItem("pedido", JSON.stringify(selecciones))
+localStorage.setItem("totalPedido", JSON.stringify(total))
 
 }
-  
- 
- 
+   
+   
      function mostrarSelecciones(selecciones) {
+
+               
          const seleccionado = document.getElementById("selecciones")
          seleccionado.innerHTML = ''
 
-         
+         const presentaSeleccion = document.createElement("h3")
+        presentaSeleccion.textContent = "Esta es su elección:"
+
          const ulSeleccion = document.createElement("ul")
          
          selecciones.forEach((seleccion) => {
              const elegido = document.createElement("li")
              elegido.className = "card"
              elegido.textContent = `${seleccion.nombre} - Precio: $${seleccion.precio}`
-            
+
+                    
                      ulSeleccion.appendChild(elegido)
+                     seleccionado.appendChild(presentaSeleccion)
                      
                     })
                      
-                
+                    
                  seleccionado.appendChild(ulSeleccion)
                  
      } 
@@ -247,9 +259,13 @@ setTimeout(() => {
      }
 
 
-
 const formulario = document.getElementById("formulario")
       formulario.addEventListener("submit", obtenerSeleccionados)
+
+      
+
+    
+
 
 
 

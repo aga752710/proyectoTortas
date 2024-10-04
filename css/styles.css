@@ -15,20 +15,26 @@ body{
     height: 130px;
     
 }
+a{
+    background-color: rgb(234, 200, 235);
+    font-size: medium;
+    text-decoration: none;
+    
+}
+a :hover{
+    transform:scale(1,1);
+}
 
 h1{
     margin-left: 1rem;
 }
 h2{
-    text-align: center;;
+    text-align: center;
 }
 
 h3{
 text-align: center;
-}
-
-.h3Seleccion{
-    text-align: center;
+font-size: medium;
 }
 
 .fotoHeader{
@@ -36,6 +42,7 @@ text-align: center;
     flex-direction: column;
     margin: 0 auto;
     row-gap: 0.5rem;
+    width: 65%;
 
 
 }
@@ -48,32 +55,6 @@ p{
     text-align: center;
    }
    
-.seleccion{
-    display: flex;
-    width: 90%;
-    text-align: center;
-    justify-content: center;
-   
-}
-.seleccion li{
-    margin: 1rem auto;
-}
-
-label{
-    justify-content: center;
-    align-items: center;
-    margin-bottom:0.5rem;
-    margin-top: 0.5rem;
-    
-    }
-
-
-.card{
-    list-style: none;
-    border: none;
-    color: rgba(48, 25, 50, 0.579);
- }
-
 input{
     margin-bottom: 0.5rem;
 }
@@ -90,7 +71,42 @@ h5{
     background-color: aliceblue;
     border:outset;
     border-color: rgba(25, 15, 34, 0.164);
+    font-size: small;
  }
+
+ .opciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: small;
+ }
+
+ .opciones h3{
+    font-size: medium;
+ }
+ .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+}
+
+.ulUsuario{
+    font-size: large;
+}
+.ulUsuario li{
+    list-style: none;
+    font-size: large , bolder;
+    background-color: aliceblue;
+    border:outset;
+    width: 100%;
+    margin:0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
  select{
 
     width: 80%;
@@ -102,27 +118,22 @@ footer{
     margin-top: 5rem;
 
 }
+textarea{
+    width: 50%;
+}
 
 @media screen and (min-width:501px) and (max-width:960px){
     .fotoHeader{display:flex;
-        margin: 0 auto;
+        flex-direction: row;
+        justify-content: center;
         padding-bottom: 1rem;
-        width: 70%;
-        row-gap: 2rem;}
+        width: 40%;
+        column-gap: 2rem;}
   
     }
-    .seleccion{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-       
-    }
-     .seleccion li{
-        margin: 1rem auto;
-     }
 
     .formulario{
-        width: 100%;
+        width: 85%;
     }
     
     
@@ -135,24 +146,18 @@ footer{
         .fotoHeader1{
             width: 20%;
         }
-        .seleccion{
+    .opciones{
         display: flex;
-        margin: 0 auto;
-        width: 70%;
-       
-        
+        flex-direction: row;
+        font-size: small;
     }
+    .opciones h3{
+        font-size: small;
+    }
+    
+    
     .formulario{
-        width: 60%;
+        width: 85%;
     }
-}
-
-
-
-
-
-
-
-
-
+    }
 
